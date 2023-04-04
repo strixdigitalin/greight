@@ -1,13 +1,13 @@
 const validator = require("../Middlewares/Validator");
 const { SendSuccess, SendError, SendFail } = require("../Middlewares/Response");
-const ExampleSchema = require("../Schema/Example.schema");
+const BusinessSchema = require("../Schema/Business.schema");
 
 const create = async (req, res, next) => {
   const { name } = req.body;
   try {
     let fields = { name };
     if (!validator.validateField(fields, res)) return null;
-    const savedData = await ExampleSchema.create({
+    const savedData = await BusinessSchema.create({
       ...req.body,
     });
     SendSuccess(res, "Category Created", savedData);
@@ -19,7 +19,7 @@ const create = async (req, res, next) => {
 
 const read = async (req, res, next) => {
   try {
-    const data = await ExampleSchema.find(req.query);
+    const data = await BusinessSchema.find(req.query);
     SendSuccess(res, "Category Fetched", data);
   } catch (e) {
     console.log(e);
@@ -44,7 +44,7 @@ const update = async (req, res, next) => {
 const Delete = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const data = await ExampleSchema.findByIdAndDelete(id);
+    const data = await BusinessSchema.findByIdAndDelete(id);
     if (!data) return SendFail(res, "Id not found");
     SendSuccess(res, "Category Deleted", data);
   } catch (e) {

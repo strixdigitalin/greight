@@ -1,10 +1,6 @@
 const express = require("express");
-const {
-  create,
-  read,
-  Delete,
-  update,
-} = require("../Controlers/Example.Controler");
+const { create, read, Delete } = require("../Controlers/Example.Controler");
+const { update } = require("../Controlers/Business.controler");
 const router = express.Router();
 router.post("/create", create);
 router.get("/get", read);
