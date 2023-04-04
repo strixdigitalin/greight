@@ -7,6 +7,8 @@ app.use(express.json());
 // const mongoose = require("mongoose");
 // --------------------------------------------------- IMPORT ROUTES
 const ExampleRoute = require("./Routes/Example.route.js");
+const BusinessRoutes = require("./Routes/Business.Routes.js");
+const Contacuts = require("./Routes/Contactus.routes.js");
 
 // ----------------------------------------------------------------------------------------------
 
@@ -38,6 +40,8 @@ app.use(function (req, res, next) {
 //-------------------------------------------------------------------------  define Routes
 app.use("/static", express.static("uploads"));
 app.use("/example", ExampleRoute);
+app.use("/business", BusinessRoutes);
+app.use("/contact", Contacuts);
 
 // ------------------------------------------------------
 

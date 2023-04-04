@@ -4,10 +4,9 @@ const {
   read,
   Delete,
   update,
-} = require("../Controlers/Example.Controler");
+} = require("../Controlers/Contactus.controler");
 const upload = require("../Middlewares/Multer");
 const router = express.Router();
-// router.post("/create", upload.fields([{ name: "image", maxCount: 1 }]), create);
 router.post("/create", create);
 router.get("/get", read);
 router.delete("/delete/:id", Delete);

@@ -13,7 +13,7 @@ const Schema = new mongoose.Schema(
       type: String,
       required: [true, "Expending Number is required"],
     },
-    investMent: {
+    investmentRange: {
       type: String,
       required: [true, "Investment range is required ex: INR 10-15 Lac"],
     },
