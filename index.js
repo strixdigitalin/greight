@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
 
 //-------------------------------------------------------------------------  define Routes
 app.use("/static", express.static("uploads"));
-app.use("/business", ExampleRoute);
+app.use("/example", ExampleRoute);
 
 // ------------------------------------------------------
 
